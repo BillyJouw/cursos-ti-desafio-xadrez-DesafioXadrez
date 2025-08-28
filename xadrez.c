@@ -1,34 +1,54 @@
-#include <stdio.h>  
-        int main (){
-            // declarando variaveis
+#include <stdio.h>
 
-            int torre = 1;
-            int rainha = 0;
-            int bispo = 1;
+void moverTorre (int Direita){
+    if (Direita > 0)
+    {
+        moverTorre(Direita -1);
+    }
+    
+}
 
-            // mover torre 5 casas a direira
+int main()
+{
+    // declarando variaveis
 
-            while (torre <= 5)
-            {
-                printf("Torre: Direita.\n");
-                torre++;
-            }
+    int torre = 5;
+    int rainha = 0;
+    int bispo = 1;
 
-            // mover o bispo 
+    // mover torre 5 casas a direira
 
-            for (int bispo = 0; bispo < 5; bispo++)
-            {
-                printf("Biscpo: Cima, Direita.\n");
-            }
+        printf("Torre: Direita.\n");
+        moverTorre(torre);
 
-            //mover rainha
-            
-            do
-            {
-                printf("Rainha: Esquerda.\n");
-                rainha++;
-            } while (rainha <= 7);
-             
-        
-            return 0;
+    // mover o bispo
+    printf("\n");
+
+    for (int bispo = 0; bispo < 5; bispo++)
+    {
+        printf("Bispo: Cima, Direita.\n");
+    }
+
+    // mover rainha
+    printf("\n");
+
+    do
+    {
+        printf("Rainha: Esquerda.\n");
+        rainha++;
+    } while (rainha <= 7);
+
+    // mover cavalo
+    printf("\n");
+    int movimento = 1;
+
+    while (movimento--)
+    {
+        for (int j = 0; j < 2; j++){
+            printf("Cavalo: cima\n");
         }
+        printf("Cavalo: direita\n");
+    }
+
+    return 0;
+}
